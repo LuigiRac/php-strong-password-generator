@@ -1,29 +1,5 @@
 <?php
-
-if(isset($_GET["password"])) {
-
-
-$maiuscole = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-$minuscole = "abcdefghijklmnopqrstuvwxyz";
-$numeri = 1234567890;
-$simboli = "!?£$%&/()=";
-
-
-$password = "";
-
-$caratteri = $maiuscole . $minuscole . $numeri . $simboli;
-
-for ($i=0; $i < $_GET['password']; $i++) { 
-    $posizioni_caratteri = rand(0, strlen($caratteri) -1);
-
-     $caratteri_casuali =  substr($caratteri, $posizioni_caratteri, 1);
-
-     $password .= $caratteri_casuali;
-}
-
-};
-
-
+require_once "./function.php";
 ?>
 
 
@@ -38,7 +14,7 @@ for ($i=0; $i < $_GET['password']; $i++) {
 <body>
 
 <h3>GENERA PASSWORD</h3>
-<form class="form-inline d-flex">
+<form  class="form-inline d-flex">
   <div class="form-group mx-sm-3 mb-2">
     <input class="form-control" type="" id="password" name="password" min="5" max="20"  placeholder="Password">
     
